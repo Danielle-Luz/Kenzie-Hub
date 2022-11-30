@@ -15,7 +15,7 @@ export const Field = ({ className, name, options, placeholder }) => {
   );
 };
 
-export const InputWrapper = ({ label, placeholder, name, options }) => {
+export const FieldWrapper = ({ label, placeholder, name, options }) => {
   return (
     <FieldWrapperStyled>
       <TextStyled tag="label">{label}</TextStyled>
