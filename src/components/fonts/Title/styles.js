@@ -13,13 +13,13 @@ const titleTypes = {
 
   h3: css`
     font-size: ${({ theme }) => theme.fontSizes[2]}px;
-  `
+  `,
 };
 
 export const TitleStyled = styled(Title)`
   color: ${({ theme }) => theme.colors.greyScale[0]};
-  
-  font-weight: ${({theme}) => theme.weight.bold};
 
-  ${({tag}) => titleTypes[tag]}
+  font-weight: ${({ theme }) => theme.weight.bold};
+
+  ${({ tag }) => titleTypes[tag]}
 `;
