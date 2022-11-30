@@ -1,9 +1,9 @@
 export const theme = {
     colors: {
         primary: {
-            primary: "#FF577F",
-            primaryFocus: "#FF427F",
-            primaryNegative: "#59323F"
+            default: "#FF577F",
+            focus: "#FF427F",
+            negative: "#59323F"
         },
 
         status: {
