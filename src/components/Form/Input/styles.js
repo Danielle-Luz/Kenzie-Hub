@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Input } from ".";
 
-export const InputStyled = styled(Input)`
+export const FieldStyled = styled(Input)`
   background-color: ${({ theme }) => theme.colors.greyScale[2]};
 
   border: 1px solid transparent;
