@@ -5,7 +5,7 @@ export const FieldStyled = styled(Field)`
   background-color: ${({ theme }) => theme.colors.greyScale[2]};
 
   border: 1px solid transparent;
-  border-radius: ${({ theme }) => theme.radius};
+  border-radius: ${({ theme }) => theme.radius}px;
 
   color: ${({ theme }) => theme.colors.greyScale[0]};
 
