@@ -14,7 +14,7 @@ const titleTypes = {
   `
 };
 
-export const TextStyled = styled(Text)`
+export const TitleStyled = styled(Title)`
   color: ${({ theme }) => theme.colors.greyScale[0]};
   font-weight: ${({ theme, weight }) =>
     weight ? theme.weight[weight] : theme.weight.regular};
