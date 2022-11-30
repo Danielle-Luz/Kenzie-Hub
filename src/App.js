@@ -1,9 +1,11 @@
-import { Routes } from './Routes';
+/* import { Routes } from './Routes'; */
 
-export const App = () => {
+import { FieldWrapper } from './components/Form/Field';
+
+export function App () {
   return (
     <>
-      <Routes />
+      <FieldWrapper label="Nome" placeholder="Insira seu nome" />
     </>
   );
 }

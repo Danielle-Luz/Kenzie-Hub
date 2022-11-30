@@ -1,4 +1,4 @@
-export const Text = ({ className, children, tag, weight }) => {
+export function Text({ className, children, tag, weight }) {
   switch (tag) {
     case "label":
       return <label className={className}>{children}</label>;
@@ -9,4 +9,4 @@ export const Text = ({ className, children, tag, weight }) => {
         </span>
       );
   }
-};
+}
