@@ -14,7 +14,8 @@ const textTypes = {
 
 export const TextStyled = styled(Text)`
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
-  font-weight: ${({ theme }) => theme.weight.regular};
+  font-weight: ${({ theme, weight }) =>
+    weight ? theme.weight[weight] : theme.weight.regular};
 
-  ${({tag}) => textTypes[tag]}
+  ${({ tag }) => textTypes[tag]}
 `;
