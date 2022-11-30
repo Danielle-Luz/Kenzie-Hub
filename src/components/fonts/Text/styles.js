@@ -4,16 +4,17 @@ import { Text } from ".";
 
 const textTypes = {
   label: css`
-    font-size: ${({ theme }) => theme.fontSizes[3]}px;
+    color: ${({ theme }) => theme.colors.greyScale[0]};
   `,
 
   span: css`
-  
-  `
+    color: ${({ theme }) => theme.colors.greyScale[1]};
+  `,
 };
 
 export const TextStyled = styled(Text)`
-  color: ${({ theme }) => theme.colors.greyScale[0]};
-  font-weight: ${({ theme, weight }) =>
-    weight ? theme.weight[weight] : theme.weight.regular};
+  font-size: ${({ theme }) => theme.fontSizes[3]}px;
+  font-weight: ${({ theme }) => theme.weight.regular};
+
+  ${({tag}) => textTypes[tag]}
 `;
