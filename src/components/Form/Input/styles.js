@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Input } from ".";
+import { Field } from ".";
 
-export const FieldStyled = styled(Input)`
+export const FieldStyled = styled(Field)`
   background-color: ${({ theme }) => theme.colors.greyScale[2]};
 
   border: 1px solid transparent;
@@ -24,7 +24,7 @@ export const FieldStyled = styled(Input)`
   }
 `;
 
-export const InputWrapper = styled.article`
+export const FieldWrapperStyled = styled.article`
   label {
     margin-bottom: 22px;
   }
