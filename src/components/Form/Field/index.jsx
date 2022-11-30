@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import { FieldStyled, FieldWrapperStyled } from "./styles";
 import { TextStyled } from "../../fonts/Text/styles";
 
