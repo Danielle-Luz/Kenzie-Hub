@@ -5,17 +5,21 @@ import { Title } from ".";
 const titleTypes = {
   h1: css`
     font-size: ${({ theme }) => theme.fontSizes[0]}px;
-    font-weight: ${({theme}) => theme.weight.bold}
   `,
 
-  h1: css`
+  h2: css`
     font-size: ${({ theme }) => theme.fontSizes[1]}px;
-    font-weight: ${({theme}) => theme.weight.bold}
+  `,
+
+  h3: css`
+    font-size: ${({ theme }) => theme.fontSizes[2]}px;
   `
 };
 
 export const TitleStyled = styled(Title)`
   color: ${({ theme }) => theme.colors.greyScale[0]};
-  font-weight: ${({ theme, weight }) =>
-    weight ? theme.weight[weight] : theme.weight.regular};
+  
+  font-weight: ${({theme}) => theme.weight.bold};
+
+  ${({tag}) => titleTypes[tag]}
 `;
