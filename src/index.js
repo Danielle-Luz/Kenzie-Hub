@@ -7,6 +7,7 @@ import { ThemeProvider } from "styled-components";
 import { theme } from './styles/theme';
 
 import { BrowserRouter } from "react-router-dom";
+import { Routes } from './Routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -16,6 +17,7 @@ root.render(
       <BrowserRouter>
         <GlobalStyles />
         <App />
+        <Routes />
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
