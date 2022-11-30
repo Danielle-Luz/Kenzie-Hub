@@ -1,4 +1,4 @@
-export const Title = ({ className, tag }) => {
+export function Title({ className, tag }) {
   switch (tag) {
     case "h1":
       return <h1 className={className}>{children}</h1>;
@@ -7,4 +7,4 @@ export const Title = ({ className, tag }) => {
     case "h3":
       return <h3 className={className}>{children}</h3>;
   }
-};
+}
