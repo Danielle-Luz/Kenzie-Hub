@@ -1,14 +1,10 @@
-export const Text = ({ className, children, color, tag, size, weight }) => {
+export const Text = ({ className, children, tag, weight }) => {
   switch (tag) {
     case "label":
-      return (
-        <label className={className} color={color} size={size} weight={weight}>
-          {children}
-        </label>
-      );
+      return <label className={className}>{children}</label>;
     case "span":
       return (
-        <span className={className} color={color} size={size} weight={weight}>
+        <span className={className} weight={weight}>
           {children}
         </span>
       );
