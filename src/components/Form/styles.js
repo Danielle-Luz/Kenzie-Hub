@@ -7,3 +7,8 @@ export const FormStyled = styled.form`
 
   padding: 42px 22px;
 `
+
+export const FormContainer = styled.section`
+  max-width: 370px;
+  width: 100%;
+`
