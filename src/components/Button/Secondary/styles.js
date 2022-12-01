@@ -11,7 +11,7 @@ export const ButtonSecondaryStyled = styled(Button)`
 
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
 
-  padding: 12px ${({ icon }) => !icon && "17px"};
+  padding: 12px 17px;
 
   &:focus {
     background-color: ${({ theme }) => theme.colors.greyScale[2]};
