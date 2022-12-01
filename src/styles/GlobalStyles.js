@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${({theme}) => theme.colors.greyScale[4]};
     }
 
-    input {
+    input, select {
         outline: none;
     }
 
