@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
 
     a {
         text-decoration: none;
+        transition: 0.3s;
     }
 
     button {

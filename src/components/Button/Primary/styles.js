@@ -9,7 +9,7 @@ export const ButtonPrimaryStyled = styled(Button)`
 
   padding: 12px;
 
-  &:focus {
+  &:hover {
     background-color: ${({ theme }) => theme.colors.primary.focus};
   }
 `;
