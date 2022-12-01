@@ -8,6 +8,10 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
+    body {
+        background-color: ${({theme}) => theme.colors.greyScale[4]};
+    }
+
     input {
         outline: none;
     }
