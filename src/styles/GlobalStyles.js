@@ -8,6 +8,10 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
+    body {
+        background-color: ${({theme}) => theme.colors.greyScale[4]};
+    }
+
     input {
         outline: none;
     }
@@ -19,5 +23,14 @@ export const GlobalStyles = createGlobalStyle`
     button {
         border: none;
         text-align: center;
+    }
+
+    #root {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        min-height: 100vh;
+        width: 100%;
     }
 `
