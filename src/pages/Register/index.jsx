@@ -9,6 +9,7 @@ import { fieldsList } from "./registerFormFieldsList";
 import { registerSchema } from "./registerSchema";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { toast } from "react-toastify";
 
 export function Register() {
   const { register, handleSubmit, formState: {errors}, reset } = useForm({
@@ -20,8 +21,12 @@ export function Register() {
     try {
       await api.post("/users", data);
 
+      toast.success("Usuário cadastrado com sucesso.");
+
       reset();
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   async function submitData(data) {
