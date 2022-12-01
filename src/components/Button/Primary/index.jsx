@@ -1,7 +1,7 @@
 import { ButtonPrimaryStyled } from "./styles";
 
-export function ButtonPrimary ({children, onClick}) {
+export function ButtonPrimary ({children, onClick, type}) {
   return (
-    <ButtonPrimaryStyled onClick={onClick}>{children}</ButtonPrimaryStyled>
+    <ButtonPrimaryStyled onClick={onClick} type={type}>{children}</ButtonPrimaryStyled>
   );
 }
