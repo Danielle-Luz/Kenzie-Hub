@@ -24,7 +24,8 @@ export const FieldStyled = styled(Field)`
   }
 `;
 
-export const FieldWrapperStyled = styled.article`
+export const FieldWrapperStyled = styled.fieldset`
+  border: none;
   display: flex;
   flex-direction: column;
   gap: 12px;

@@ -1,16 +1,14 @@
 import tinyLogo from "../../assets/imgs/logo-tiny.svg";
 import bigLogo from "../../assets/imgs/logo-big.svg";
 
-import { ButtonSecondary } from "../Button/Terciary";
+import { ButtonSecondary } from "../Button/Secondary";
 import { HeaderStyled } from "./styles";
 
-export function Header ({hasTinyLogo, buttonText, to}) {
+export function Header({ hasTinyLogo, buttonText, to }) {
   return (
     <HeaderStyled buttonText={buttonText}>
       <img src={hasTinyLogo ? tinyLogo : bigLogo} alt="logo" />
-      {
-        buttonText && <ButtonSecondary to={to}>{buttonText}</ButtonSecondary>
-      }
+      {buttonText && <ButtonSecondary to={to}>{buttonText}</ButtonSecondary>}
     </HeaderStyled>
   );
 }
