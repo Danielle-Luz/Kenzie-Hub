@@ -9,12 +9,16 @@ import { useForm } from "react-hook-form";
 import { fieldsList } from "./registerFormFieldsList";
 
 export function Register() {
-  
+  const { register, handleSubmit, formState: errors } = useForm();
 
   async function createUser(data) {
     try {
       await api.post("/users", data);
     } catch (err) {}
+  }
+
+  async function submitData(data) {
+    await createUser(data);
   }
 
   return (
@@ -23,7 +27,7 @@ export function Register() {
       <main>
         <TitleStyled tag="h2">Crie sua conta</TitleStyled>
         <TextStyled tag="span">Rápido e grátis, vamos nessa</TextStyled>
-        <Form fieldsList={fieldsList} onSubmit={createUser} />
+        <Form errors={errors} fieldsList={fieldsList} onSubmit={handleSubmit(submitData)} />
         <ButtonPrimary type="default">Cadastrar</ButtonPrimary>
       </main>
     </FormContainer>
