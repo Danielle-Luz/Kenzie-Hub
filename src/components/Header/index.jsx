@@ -1,7 +1,7 @@
 import tinyLogo from "../../assets/imgs/logo-tiny.svg";
 import bigLogo from "../../assets/imgs/logo-big.svg";
 
-import { ButtonSecondary } from "../Button/Secondary";
+import { ButtonSecondary } from "../Button/Terciary";
 import { HeaderStyled } from "./styles";
 
 export function Header ({hasTinyLogo, buttonText, to}) {
