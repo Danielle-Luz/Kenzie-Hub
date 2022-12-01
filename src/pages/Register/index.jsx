@@ -11,7 +11,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 
 export function Register() {
-  const { register, handleSubmit, formState: errors, reset } = useForm({
+  const { register, handleSubmit, formState: {errors}, reset } = useForm({
     mode: "onBlur",
     resolver: yupResolver(registerSchema)
   });
@@ -34,7 +34,7 @@ export function Register() {
       <main>
         <TitleStyled tag="h2">Crie sua conta</TitleStyled>
         <TextStyled tag="span">Rápido e grátis, vamos nessa</TextStyled>
-        <Form errors={errors} fieldsList={fieldsList} register={register} />
+        <Form errors={errors} handleSubmit={handleSubmit} submitData={submitData} fieldsList={fieldsList} register={register} />
         <ButtonPrimary type="default">Cadastrar</ButtonPrimary>
       </main>
     </FormContainer>

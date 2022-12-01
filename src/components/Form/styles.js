@@ -27,8 +27,8 @@ export const FormContainer = styled.section`
 
     ${formFlexSpacing}
 
-    h2, span {
-      text-align: center;
-    }
+  }
+  h2, span {
+    text-align: center;
   }
 `;

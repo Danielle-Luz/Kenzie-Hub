@@ -33,4 +33,8 @@ export const FieldWrapperStyled = styled.article`
     background-color: ${({ theme }) => theme.colors.greyScale[2]};
     color: ${({ theme }) => theme.colors.greyScale[0]};
   }
+
+  span {
+    text-align: start;
+  }
 `;
