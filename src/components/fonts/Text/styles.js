@@ -13,8 +13,11 @@ const textTypes = {
 };
 
 export const TextStyled = styled(Text)`
-  font-size: ${({ theme }) => theme.fontSizes[3]}px;
+  ${({color}) => {
+    color && css`color: ${color};`
+  }}
 
+  font-size: ${({ theme }) => theme.fontSizes[3]}px;
   font-weight: ${({ theme, weight }) =>
     weight ? theme.weight[weight] : theme.weight.regular};
 
