@@ -1,4 +1,4 @@
-export function Title({ className, tag }) {
+export function Title({ className, children, tag }) {
   switch (tag) {
     case "h1":
       return <h1 className={className}>{children}</h1>;
