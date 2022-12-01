@@ -5,15 +5,22 @@ import { TextStyled } from "../../components/fonts/Text/styles";
 import { Header } from "../../components/Header";
 import { ButtonPrimary } from "../../components/Button/Primary";
 import { api } from "../../services/api";
-import { useForm } from "react-hook-form";
 import { fieldsList } from "./registerFormFieldsList";
+import { registerSchema } from "./registerSchema";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
 
 export function Register() {
-  const { register, handleSubmit, formState: errors } = useForm();
+  const { register, handleSubmit, formState: errors, reset } = useForm({
+    mode: "onBlur",
+    resolver: yupResolver(registerSchema)
+  });
 
   async function createUser(data) {
     try {
       await api.post("/users", data);
+
+      reset();
     } catch (err) {}
   }
 
