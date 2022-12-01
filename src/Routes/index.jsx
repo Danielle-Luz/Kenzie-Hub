@@ -5,10 +5,12 @@ import { Register } from "./../pages/Register";
 /* import { Dashboard } from "./../pages/Dashboard"; */
 
 export function Routes () {
-    <RoutesWrapper>{/* 
-        <Route path="/login" element={Login} /> */}
-        <Route path="/register" element={Register} />{/* 
-        <Route path="/dashboard" element={Dashboard} /> */}{/* 
-        <Route path="*" element={Dashboard} /> */}
-    </RoutesWrapper>
+    return (
+        <RoutesWrapper>{/* 
+            <Route path="/login" element={Login} /> */}
+            <Route path="/register" element={<Register />} />{/* 
+            <Route path="/dashboard" element={Dashboard} /> */}{/* 
+            <Route path="*" element={Dashboard} /> */}
+        </RoutesWrapper>
+    );
 } 
