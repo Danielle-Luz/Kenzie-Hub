@@ -4,7 +4,7 @@ import { FieldWrapper } from "./Field";
 export function Form({ errors, fieldsList, onSubmit, register }) {
   return (
     <FormStyled onSubmit={onSubmit}>
-      {fieldsList.map(({ label, placeholder, name, options }) => {
+      {fieldsList.map(({ label, placeholder, name, options, type }) => {
         return (
           <FieldWrapper
             label={label}
@@ -13,6 +13,7 @@ export function Form({ errors, fieldsList, onSubmit, register }) {
             options={options}
             error={errors[name]}
             register={register}
+            type={type}
           />
         );
       })}
