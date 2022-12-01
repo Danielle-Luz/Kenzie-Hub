@@ -46,10 +46,6 @@ export function Register() {
     }
   }
 
-  async function submitData(data) {
-    await createUser(data);
-  }
-
   return (
     <FormContainer>
       <Header buttonText="Voltar" to="/login" />
@@ -61,7 +57,7 @@ export function Register() {
           buttonText="Cadastrar"
           errors={errors}
           handleSubmit={handleSubmit}
-          submitData={submitData}
+          submitData={createUser}
           fieldsList={fieldsList}
           register={register}
         />
