@@ -11,7 +11,7 @@ import { FormContainer } from "../../components/Form/styles";
 import { Header } from "../../components/Header";
 import { TitleStyled } from "../../components/fonts/Title/styles";
 import { TextStyled } from "../../components/fonts/Text/styles";
-import { ButtonSecondary } from "../../components/Button/Terciary";
+import { ButtonSecondary } from "../../components/Button/Secondary";
 
 export function Login() {
   const navigate = useNavigate();
@@ -62,7 +62,7 @@ export function Login() {
           register={register}
         />
         <TextStyled tag="span">Ainda não possui uma conta?</TextStyled>
-        <ButtonSecondary to="/register">Cadastre-se</ButtonSecondary>
+        <ButtonSecondary to="/register" size>Cadastre-se</ButtonSecondary>
       </main>
     </FormContainer>
   );
