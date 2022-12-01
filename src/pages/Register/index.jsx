@@ -4,6 +4,7 @@ import { TitleStyled } from "../../components/fonts/Title/styles";
 import { TextStyled } from "../../components/fonts/Text/styles";
 import { Header } from "../../components/Header";
 import { ButtonPrimary } from "../../components/Button/Primary";
+import { api } from "../../services/api";
 
 export function Register() {
   const fieldsList = [
@@ -52,7 +53,11 @@ export function Register() {
     },
   ];
 
-  function createUser() {}
+  async function createUser(data) {
+    try {
+      await api.post("/users", data);
+    } catch (err) {}
+  }
 
   return (
     <FormContainer>
