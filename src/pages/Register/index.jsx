@@ -3,6 +3,7 @@ import { FormContainer } from "../../components/Form/styles";
 import { TitleStyled } from "../../components/fonts/Title/styles";
 import { TextStyled } from "../../components/fonts/Text/styles";
 import { Header } from "../../components/Header";
+import { ButtonPrimary } from "../../components/Button/Primary";
 
 export function Register() {
   const fieldsList = [
@@ -60,6 +61,7 @@ export function Register() {
         <TitleStyled tag="h2">Crie sua conta</TitleStyled>
         <TextStyled tag="span">Rápido e grátis, vamos nessa</TextStyled>
         <Form fieldsList={fieldsList} onSubmit={createUser} />
+        <ButtonPrimary type="default">Cadastrar</ButtonPrimary>
       </main>
     </FormContainer>
   );
