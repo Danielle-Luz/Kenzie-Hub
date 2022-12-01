@@ -12,7 +12,7 @@ export function Field({ className, name, options, placeholder, error }) {
       </select>
       :
       <input className={className} placeholder={placeholder} />)
-      {error && <TextStyled tag="span">{error}</TextStyled>}
+      {error && <TextStyled error tag="span">{error}</TextStyled>}
     </>
   );
 }

@@ -13,8 +13,8 @@ const textTypes = {
 };
 
 export const TextStyled = styled(Text)`
-  ${({color}) => {
-    color && css`color: ${color};`
+  ${({theme, error}) => {
+    error && css`color: ${theme.colors.status.negative};`
   }}
 
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
