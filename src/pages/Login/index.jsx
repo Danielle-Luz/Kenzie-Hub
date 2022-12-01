@@ -30,14 +30,15 @@ export function Login() {
 
   async function login(data) {
     try {
-      await api.post("sessions", data);
+      const userData = await api.post("/sessions", data);
+      const { token, user: id } = userData;
 
-      localStorage.setItem("@TOKEN", data.token);
-      localStorage.setItem("@USERID", data.user.id);
+      localStorage.setItem("@TOKEN", token);
+      localStorage.setItem("@USERID", id);
 
       navigate("/dashboard");
-    } catch ({ response }) {
-      const hasErrorMessage = response?.data?.message;
+    } catch (err) {
+      const hasErrorMessage = err?.response?.data?.message;
 
       if (hasErrorMessage) {
         toast.error("Email ou senha incorretos");
