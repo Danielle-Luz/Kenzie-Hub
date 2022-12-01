@@ -30,6 +30,7 @@ export const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: center;
 
+        min-height: 100vh;
         width: 100%;
     }
 `
