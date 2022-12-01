@@ -23,7 +23,7 @@ export function Login() {
   const {
     register,
     handleSubmit,
-    formState: errors,
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(loginSchema),
   });
@@ -61,8 +61,12 @@ export function Login() {
           fieldsList={fieldsList}
           register={register}
         />
-        <TextStyled tag="span">Ainda não possui uma conta?</TextStyled>
-        <ButtonSecondary to="/register" size>Cadastre-se</ButtonSecondary>
+        <TextStyled tag="span" weight="medium">
+          Ainda não possui uma conta?
+        </TextStyled>
+        <ButtonSecondary to="/register" size>
+          Cadastre-se
+        </ButtonSecondary>
       </main>
     </FormContainer>
   );
