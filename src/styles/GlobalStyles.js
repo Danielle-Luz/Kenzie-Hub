@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
 
     a {
         text-decoration: none;
+        text-align: center;
         transition: 0.3s;
     }
 
