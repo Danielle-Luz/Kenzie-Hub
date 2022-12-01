@@ -42,7 +42,7 @@ export const GlobalStyles = createGlobalStyle`
         display: flex;
         justify-content: center;
 
-        min-height: 100vh;
+        min-height: max-content;
         width: 100%;
     }
 `
