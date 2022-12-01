@@ -1,7 +1,7 @@
 import { ButtonSecondaryStyled } from "./styles";
 
-export function ButtonSecondary ({children, icon, onClick}) {
+export function ButtonSecondary ({children, to}) {
   return (
-    <ButtonSecondaryStyled icon={icon} onClick={onClick}>{children}</ButtonSecondaryStyled>
+    <ButtonSecondaryStyled to={to}>{children}</ButtonSecondaryStyled>
   );
 }
