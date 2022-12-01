@@ -13,7 +13,7 @@ export const ButtonSecondaryStyled = styled(Button)`
 
   padding: 12px 17px;
 
-  &:focus {
+  &:hover {
     background-color: ${({ theme }) => theme.colors.greyScale[2]};
   }
 `;

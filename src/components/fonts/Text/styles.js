@@ -14,9 +14,12 @@ const textTypes = {
 
 export const TextStyled = styled(Text)`
   font-size: ${({ theme }) => theme.fontSizes[3]}px;
-  
   font-weight: ${({ theme, weight }) =>
     weight ? theme.weight[weight] : theme.weight.regular};
 
   ${({ tag }) => textTypes[tag]}
+
+  ${({theme, error}) => {
+    return error && css`color: ${theme.colors.status.negative};`
+  }}
 `;

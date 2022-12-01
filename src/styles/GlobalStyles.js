@@ -8,21 +8,33 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
-    body {
-        background-color: ${({theme}) => theme.colors.greyScale[4]};
+    :root {
+        --toastify-color-success: ${({theme}) => theme.colors.status.sucess};
+        --toastify-color-error: ${({theme}) => theme.colors.status.negative};
     }
 
-    input {
+    body {
+        background-color: ${({theme}) => theme.colors.greyScale[4]};
+        padding: 40px 15px;
+    }
+
+    input, select {
         outline: none;
     }
 
     a {
         text-decoration: none;
+        text-align: center;
+        transition: 0.3s;
     }
 
     button {
         border: none;
         text-align: center;
+    }
+    
+    button, select {
+        cursor: pointer;
     }
 
     #root {

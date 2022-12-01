@@ -1,19 +1,31 @@
 import { FormStyled } from "./styles";
 import { FieldWrapper } from "./Field";
+import { ButtonPrimary } from "../../components/Button/Primary";
 
-export function Form({ fieldsList, onSubmit }) {
+export function Form({ button, buttonText, errors, fieldsList, handleSubmit, submitData, register }) {
   return (
-    <FormStyled onSubmit={onSubmit}>
-      {fieldsList.map(({ label, placeholder, name, options }) => {
-        return (
-          <FieldWrapper
-            label={label}
-            placeholder={placeholder}
-            name={name}
-            options={options}
-          />
-        );
-      })}
+    <FormStyled onSubmit={handleSubmit(submitData)}>
+      <>
+        {fieldsList.map(({ label, placeholder, name, options, type }) => {
+          return (
+            <FieldWrapper
+              label={label}
+              placeholder={placeholder}
+              name={name}
+              options={options}
+              error={errors[name]}
+              register={register}
+              type={type}
+            />
+          );
+        })}
+        <ButtonPrimary
+          button={button}
+          colorType={Object.keys(errors).length != 0 ? "negative" : "default"}
+        >
+          {buttonText}
+        </ButtonPrimary>
+      </>
     </FormStyled>
   );
 }

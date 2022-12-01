@@ -1,11 +1,12 @@
-/* import { Routes } from './Routes'; */
-
-import { FieldWrapper } from './components/Form/Field';
+import { Routes } from './Routes';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 export function App () {
   return (
     <>
-      <FieldWrapper label="Nome" placeholder="Insira seu nome" />
+      <ToastContainer autoClose={3000} />
+      <Routes />
     </>
   );
 }
