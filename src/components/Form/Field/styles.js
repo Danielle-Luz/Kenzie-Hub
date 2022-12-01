@@ -25,9 +25,9 @@ export const FieldStyled = styled(Field)`
 `;
 
 export const FieldWrapperStyled = styled.article`
-  label {
-    margin-bottom: 22px;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 
   option {
     background-color: ${({ theme }) => theme.colors.greyScale[2]};
