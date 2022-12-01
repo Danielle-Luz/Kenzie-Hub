@@ -8,13 +8,18 @@ import { api } from "../../services/api";
 import { fieldsList } from "./registerFormFieldsList";
 import { registerSchema } from "./registerSchema";
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 
 export function Register() {
-  const { register, handleSubmit, formState: {errors}, reset } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
     mode: "onBlur",
-    resolver: yupResolver(registerSchema)
+    resolver: yupResolver(registerSchema),
   });
 
   async function createUser(data) {
@@ -39,8 +44,19 @@ export function Register() {
       <main>
         <TitleStyled tag="h2">Crie sua conta</TitleStyled>
         <TextStyled tag="span">Rápido e grátis, vamos nessa</TextStyled>
-        <Form errors={errors} handleSubmit={handleSubmit} submitData={submitData} fieldsList={fieldsList} register={register} />
-        <ButtonPrimary type="default">Cadastrar</ButtonPrimary>
+        <Form
+          errors={errors}
+          handleSubmit={handleSubmit}
+          submitData={submitData}
+          fieldsList={fieldsList}
+          register={register}
+        />
+        <ButtonPrimary
+          button
+          type={Object.keys(errors).length != 0 ? "negative" : "default"}
+        >
+          Cadastrar
+        </ButtonPrimary>
       </main>
     </FormContainer>
   );
