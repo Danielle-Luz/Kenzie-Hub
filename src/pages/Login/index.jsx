@@ -61,9 +61,9 @@ export function Login() {
           fieldsList={fieldsList}
           register={register}
         />
+        <TextStyled tag="span">Ainda não possui uma conta?</TextStyled>
+        <ButtonSecondary to="/register">Cadastre-se</ButtonSecondary>
       </main>
-      <TextStyled tag="span">Ainda não possui uma conta?</TextStyled>
-      <ButtonSecondary to="/register">Cadastre-se</ButtonSecondary>
     </FormContainer>
   );
 }
