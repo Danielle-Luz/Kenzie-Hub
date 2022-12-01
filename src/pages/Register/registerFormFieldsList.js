@@ -31,7 +31,7 @@ export const fieldsList = [
   },
   {
     label: "Selecionar módulo",
-    name: "module",
+    name: "course_module",
     placeholder: "Primeiro módulo",
     options: [
       "Primeiro módulo",
