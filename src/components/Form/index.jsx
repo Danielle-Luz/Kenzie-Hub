@@ -1,7 +1,7 @@
 import { FormStyled } from "./styles";
 import { FieldWrapper } from "./Field";
 
-export function Form({ errors, fieldsList, onSubmit }) {
+export function Form({ errors, fieldsList, onSubmit, register }) {
   return (
     <FormStyled onSubmit={onSubmit}>
       {fieldsList.map(({ label, placeholder, name, options }) => {
@@ -12,6 +12,7 @@ export function Form({ errors, fieldsList, onSubmit }) {
             name={name}
             options={options}
             error={errors[name]}
+            register={register}
           />
         );
       })}

@@ -34,7 +34,7 @@ export function Register() {
       <main>
         <TitleStyled tag="h2">Crie sua conta</TitleStyled>
         <TextStyled tag="span">Rápido e grátis, vamos nessa</TextStyled>
-        <Form errors={errors} fieldsList={fieldsList} onSubmit={handleSubmit(submitData)} />
+        <Form errors={errors} fieldsList={fieldsList} onSubmit={handleSubmit(submitData)} register={register} />
         <ButtonPrimary type="default">Cadastrar</ButtonPrimary>
       </main>
     </FormContainer>
