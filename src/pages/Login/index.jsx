@@ -5,9 +5,14 @@ import { Form } from "../../components/Form";
 import { toast } from "react-toastify";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 export function Login() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
 
   const {
     register,
