@@ -3,7 +3,6 @@ import { FormContainer } from "../../components/Form/styles";
 import { TitleStyled } from "../../components/fonts/Title/styles";
 import { TextStyled } from "../../components/fonts/Text/styles";
 import { Header } from "../../components/Header";
-import { ButtonPrimary } from "../../components/Button/Primary";
 import { api } from "../../services/api";
 import { fieldsList } from "./registerFormFieldsList";
 import { registerSchema } from "./registerSchema";
@@ -45,18 +44,14 @@ export function Register() {
         <TitleStyled tag="h2">Crie sua conta</TitleStyled>
         <TextStyled tag="span">Rápido e grátis, vamos nessa</TextStyled>
         <Form
+          button
+          buttonText="Cadastrar"
           errors={errors}
           handleSubmit={handleSubmit}
           submitData={submitData}
           fieldsList={fieldsList}
           register={register}
         />
-        <ButtonPrimary
-          button
-          type={Object.keys(errors).length != 0 ? "negative" : "default"}
-        >
-          Cadastrar
-        </ButtonPrimary>
       </main>
     </FormContainer>
   );

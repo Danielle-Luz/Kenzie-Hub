@@ -1,8 +1,8 @@
 import { FormStyled } from "./styles";
 import { FieldWrapper } from "./Field";
+import { ButtonPrimary } from "../../components/Button/Primary";
 
-export function Form({ errors, fieldsList, handleSubmit, submitData, register }) {
-  console.log(errors);
+export function Form({ button, buttonText, errors, fieldsList, handleSubmit, submitData, register }) {
   return (
     <FormStyled onSubmit={handleSubmit(submitData)}>
       <>
@@ -19,6 +19,12 @@ export function Form({ errors, fieldsList, handleSubmit, submitData, register })
             />
           );
         })}
+        <ButtonPrimary
+          button={button}
+          colorType={Object.keys(errors).length != 0 ? "negative" : "default"}
+        >
+          {buttonText}
+        </ButtonPrimary>
       </>
     </FormStyled>
   );

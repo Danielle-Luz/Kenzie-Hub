@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Button } from "../styles";
 
 export const ButtonPrimaryStyled = styled(Button)`
-  background-color: ${({ theme, type }) => theme.colors.primary[type]};
+  background-color: ${({ theme, colorType }) =>
+    theme.colors.primary[colorType]};
 
   font-size: ${({ theme }) => theme.fontSizes[1]}px;
 
