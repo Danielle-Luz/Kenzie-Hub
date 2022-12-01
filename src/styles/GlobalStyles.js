@@ -8,6 +8,11 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 
+    :root {
+        --toastify-color-success: ${({theme}) => theme.colors.status.sucess};
+        --toastify-color-error: ${({theme}) => theme.colors.status.negative};
+    }
+
     body {
         background-color: ${({theme}) => theme.colors.greyScale[4]};
         padding: 40px 15px;
@@ -26,6 +31,10 @@ export const GlobalStyles = createGlobalStyle`
     button {
         border: none;
         text-align: center;
+    }
+    
+    button, select {
+        cursor: pointer;
     }
 
     #root {
