@@ -31,7 +31,8 @@ export function Login() {
   async function login(data) {
     try {
       const userData = await api.post("/sessions", data);
-      const { token, user: id } = userData;
+
+      const  {token, user: {id}} = userData.data;
 
       localStorage.setItem("@TOKEN", token);
       localStorage.setItem("@USERID", id);
