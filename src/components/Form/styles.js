@@ -20,5 +20,11 @@ export const FormContainer = styled.section`
   max-width: 370px;
   width: 100%;
 
-  ${formFlexSpacing}
+  header {
+    margin-bottom: 40px;
+  }
+
+  main {
+    ${formFlexSpacing}
+  }
 `

@@ -1,11 +1,9 @@
-/* import { Routes } from './Routes'; */
-
-import { FieldWrapper } from './components/Form/Field';
+import { Routes } from './Routes';
 
 export function App () {
   return (
     <>
-      <FieldWrapper label="Nome" placeholder="Insira seu nome" />
+      <Routes />
     </>
   );
 }
