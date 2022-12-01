@@ -56,7 +56,7 @@ export function Register() {
 
   return (
     <FormContainer>
-      <Header buttonText="Voltar" />
+      <Header buttonText="Voltar" to="/login" />
       <main>
         <TitleStyled tag="h2">Crie sua conta</TitleStyled>
         <TextStyled tag="span">Rápido e grátis, vamos nessa</TextStyled>
