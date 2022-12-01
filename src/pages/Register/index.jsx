@@ -28,8 +28,13 @@ export function Register() {
       toast.success("Usuário cadastrado com sucesso.");
 
       reset();
-    } catch (err) {
-      console.log(err);
+    } catch ({response}) {
+      const hasErrorMessage = response?.data?.message;
+      if (hasErrorMessage) {
+        toast.error("Email já cadastrado");
+      } else {
+        toast.error("Não foi possível cadastrar o usuário");
+      }
     }
   }
 
