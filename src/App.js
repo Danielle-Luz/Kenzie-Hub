@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 export function App () {
   return (
     <>
-      <ToastContainer />
+      <ToastContainer autoClose={3000} />
       <Routes />
     </>
   );

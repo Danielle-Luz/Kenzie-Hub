@@ -9,8 +9,11 @@ import { registerSchema } from "./registerSchema";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export function Register() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -26,8 +29,13 @@ export function Register() {
       await api.post("/users", data);
 
       toast.success("Usuário cadastrado com sucesso.");
-
+      
       reset();
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 4000);
+
     } catch ({response}) {
       const hasErrorMessage = response?.data?.message;
       if (hasErrorMessage) {
