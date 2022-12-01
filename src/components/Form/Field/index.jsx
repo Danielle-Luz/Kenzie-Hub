@@ -19,7 +19,7 @@ export function FieldWrapper({ label, placeholder, name, options, error, registe
       <TextStyled tag="label">{label}</TextStyled>
       <FieldStyled placeholder={placeholder} options={options} name={name} register={register} type={type} />
       {error && (
-        <TextStyled error tag="span">
+        <TextStyled error={error} tag="span">
           {error.message}
         </TextStyled>
       )}
