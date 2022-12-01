@@ -9,7 +9,7 @@ export const ButtonSecondaryStyled = styled(Button)`
   display: flex;
   justify-content: center;
 
-  font-size: ${({ theme }) => theme.fontSizes[3]};
+  font-size: ${({ theme }) => theme.fontSizes[3]}px;
 
   padding: 12px ${({ icon }) => !icon && "17px"};
 
