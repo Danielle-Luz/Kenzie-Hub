@@ -4,8 +4,8 @@ import { TextStyled } from "../../fonts/Text/styles";
 export function Field({ className, name, options, placeholder, register, type }) {
   return options ? (
     <select className={className} defaultValue={placeholder} {...register(name)}>
-      {options.map((option) => (
-        <option value={option}>{option}</option>
+      {options.map((option, index) => (
+        <option key={index} value={option}>{option}</option>
       ))}
     </select>
   ) : (

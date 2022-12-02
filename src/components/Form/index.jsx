@@ -6,9 +6,10 @@ export function Form({ button, buttonText, errors, fieldsList, handleSubmit, loa
   return (
     <FormStyled onSubmit={handleSubmit(submitData)} noValidate>
       <>
-        {fieldsList.map(({ label, placeholder, name, options, type }) => {
+        {fieldsList.map(({ label, placeholder, name, options, type }, index) => {
           return (
             <FieldWrapper
+              key={index}
               label={label}
               placeholder={placeholder}
               name={name}
