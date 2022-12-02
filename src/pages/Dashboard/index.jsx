@@ -36,7 +36,7 @@ export function Dashboard() {
     }
 
     getUserData();
-  }, []);
+  }, [userData]);
 
   return (
     <>
