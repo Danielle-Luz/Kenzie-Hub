@@ -4,6 +4,7 @@ import { Container, FullWidthWrapper } from "./styles";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import { LoadingIcon } from "../../components/LoadingIcon/LoadingIcon";
 
 export function Dashboard() {
   const [userData, setUserData] = useState({});
