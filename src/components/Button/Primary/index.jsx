@@ -15,7 +15,7 @@ export function ButtonPrimary({
       onClick={onClick}
       to={to}
       colorType={colorType}
-      disabled={loading}
+      disabled={loading || colorType == "negative"}
     >
       {loading ? <LoadingIcon darker size={20} /> : children}
     </ButtonPrimaryStyled>

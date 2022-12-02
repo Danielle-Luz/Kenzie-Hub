@@ -23,13 +23,16 @@ export const GlobalStyles = createGlobalStyle`
 
     a {
         text-decoration: none;
-        text-align: center;
-        transition: 0.3s;
     }
-
+    
     button {
         border: none;
         text-align: center;
+    }
+    
+    a, button {
+        text-align: center;
+        transition: 0.3s;
     }
     
     button, select {
