@@ -23,7 +23,10 @@ export function Dashboard() {
 
   return (
     <>
-      
+      <Container>
+        <Header hasTinyLogo buttonText="Sair" to="/login" />
+      </Container>
+      <UserInfo user={userData} />
     </>
   );
 }
