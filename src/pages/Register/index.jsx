@@ -10,12 +10,16 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Register() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
 
   const {
     register,
@@ -33,9 +37,9 @@ export function Register() {
 
       await api.post("/users", data);
 
-      toast.success("Usuário cadastrado com sucesso.");
-
       reset();
+
+      toast.success("Usuário cadastrado com sucesso.");
 
       setTimeout(() => {
         navigate("/login");
