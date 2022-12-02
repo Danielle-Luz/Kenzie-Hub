@@ -34,7 +34,7 @@ export function Dashboard() {
   return (
     <FullWidthWrapper>
       <Container>
-        <Header hasTinyLogo buttonText="Sair" to="/login" />
+        <Header hasTinyLogo buttonText="Sair" darker to="/login" />
       </Container>
       <UserInfo user={userData} />
     </FullWidthWrapper>
