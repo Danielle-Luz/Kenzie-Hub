@@ -12,7 +12,9 @@ export const FormStyled = styled.form`
 
 export const FormContainer = styled.section`
   max-width: 370px;
+  min-height: 100vh;
   width: 100%;
+  margin: 50px 20px; 
 
   header {
     margin-bottom: 40px;
@@ -26,8 +28,8 @@ export const FormContainer = styled.section`
     padding: 42px 22px;
 
     ${formFlexSpacing}
-
   }
+
   h2, span {
     text-align: center;
   }
