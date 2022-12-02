@@ -10,6 +10,8 @@ export const UserInfoStyled = styled.article`
   ${Container} {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px 50px;
     justify-content: space-between;
   }
 `
