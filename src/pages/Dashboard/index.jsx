@@ -1,6 +1,6 @@
 import { UserInfo } from "./UserInfo";
 import { Header } from "../../components/Header";
-import { Container } from "./styles";
+import { Container, FullWidthWrapper } from "./styles";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
@@ -32,11 +32,11 @@ export function Dashboard() {
   }, []);
 
   return (
-    <div>
+    <FullWidthWrapper>
       <Container>
         <Header hasTinyLogo buttonText="Sair" to="/login" />
       </Container>
       <UserInfo user={userData} />
-    </div>
+    </FullWidthWrapper>
   );
 }

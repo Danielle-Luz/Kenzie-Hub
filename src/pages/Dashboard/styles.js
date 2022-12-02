@@ -7,3 +7,7 @@ export const Container = styled.div`
   max-width: 770px;
   width: 100%;
 `
+
+export const FullWidthWrapper = styled.div`
+  width: 100%;
+`

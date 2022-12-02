@@ -15,7 +15,6 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         background-color: ${({theme}) => theme.colors.greyScale[4]};
-        padding: 40px 15px;
     }
 
     input, select {
