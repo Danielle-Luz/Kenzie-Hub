@@ -42,7 +42,7 @@ export function Dashboard() {
     <>
       {loading ? (
         <LoadingContainer>
-          <LoadingIcon size={120} />
+          <LoadingIcon size={80} />
         </LoadingContainer>
       ) : (
         <FullWidthWrapper>
