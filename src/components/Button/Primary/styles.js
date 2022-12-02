@@ -11,6 +11,9 @@ export const ButtonPrimaryStyled = styled(Button)`
   padding: 12px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.primary.focus};
+    background-color: ${({ theme, colorType }) =>
+      colorType == "negative"
+        ? theme.colors.primary.negative
+        : theme.colors.primary.focus};
   }
 `;
