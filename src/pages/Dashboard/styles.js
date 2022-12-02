@@ -11,3 +11,11 @@ export const Container = styled.div`
 export const FullWidthWrapper = styled.div`
   width: 100%;
 `
+
+export const LoadingContainer = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  
+  height: 100vh;
+`
