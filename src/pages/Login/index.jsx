@@ -12,7 +12,6 @@ import { Header } from "../../components/Header";
 import { TitleStyled } from "../../components/fonts/Title/styles";
 import { TextStyled } from "../../components/fonts/Text/styles";
 import { ButtonSecondary } from "../../components/Button/Secondary";
-import { LoadingIcon } from "../../components/LoadingIcon/LoadingIcon";
 
 export function Login() {
   const [loading, setLoading] = useState(false);
@@ -66,9 +65,10 @@ export function Login() {
         <TitleStyled tag="h2">Login</TitleStyled>
         <Form
           button
-          buttonText={loading ? <LoadingIcon darker size={20} /> : "Entrar"}
+          buttonText="Entrar"
           errors={errors}
           handleSubmit={handleSubmit}
+          loading={loading}
           submitData={login}
           fieldsList={fieldsList}
           register={register}
