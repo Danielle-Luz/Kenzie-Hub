@@ -10,8 +10,11 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export function Register() {
+  const [loading, setLoading] = useState(false);
+
   const navigate = useNavigate();
 
   const {
@@ -26,23 +29,26 @@ export function Register() {
 
   async function createUser(data) {
     try {
+      setLoading(true);
+
       await api.post("/users", data);
 
       toast.success("Usuário cadastrado com sucesso.");
-      
+
       reset();
 
       setTimeout(() => {
         navigate("/login");
       }, 4000);
-
-    } catch ({response}) {
+    } catch ({ response }) {
       const hasErrorMessage = response?.data?.message;
       if (hasErrorMessage) {
         toast.error("Email já cadastrado");
       } else {
         toast.error("Não foi possível cadastrar o usuário");
       }
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -57,6 +63,7 @@ export function Register() {
           buttonText="Cadastrar"
           errors={errors}
           handleSubmit={handleSubmit}
+          loading={loading}
           submitData={createUser}
           fieldsList={fieldsList}
           register={register}

@@ -2,7 +2,7 @@ import { FormStyled } from "./styles";
 import { FieldWrapper } from "./Field";
 import { ButtonPrimary } from "../../components/Button/Primary";
 
-export function Form({ button, buttonText, errors, fieldsList, handleSubmit, submitData, register }) {
+export function Form({ button, buttonText, errors, fieldsList, handleSubmit, loading, submitData, register }) {
   return (
     <FormStyled onSubmit={handleSubmit(submitData)} noValidate>
       <>
@@ -22,6 +22,7 @@ export function Form({ button, buttonText, errors, fieldsList, handleSubmit, sub
         <ButtonPrimary
           button={button}
           colorType={Object.keys(errors).length != 0 ? "negative" : "default"}
+          loading={loading}
         >
           {buttonText}
         </ButtonPrimary>
