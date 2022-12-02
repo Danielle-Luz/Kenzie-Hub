@@ -8,8 +8,8 @@ export function Routes() {
     <RoutesWrapper>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/dashboard" element={Dashboard} />
-      <Route path="*" element={Dashboard} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="*" element={<Dashboard />} />
     </RoutesWrapper>
   );
 }
