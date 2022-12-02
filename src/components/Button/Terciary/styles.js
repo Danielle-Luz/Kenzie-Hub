@@ -5,10 +5,6 @@ import { Button } from "../styles";
 export const ButtonTerciaryStyled = styled(Button)`
   background-color: ${({ theme }) => theme.colors.greyScale[3]};
 
-  align-items: center;
-  display: flex;
-  justify-content: center;
-
   height: fit-content;
 
   font-size: ${({ theme }) => theme.fontSizes[3]}px;

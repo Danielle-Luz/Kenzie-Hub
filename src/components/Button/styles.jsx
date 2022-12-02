@@ -13,4 +13,8 @@ function ClickableElement({ button, className, children, to }) {
 export const Button = styled(ClickableElement)`
   color: ${({ theme }) => theme.colors.greyScale[0]};
   border-radius: ${({ theme }) => theme.radius}px;
+  
+  align-items: center;
+  display: flex;
+  justify-content: center;
 `;
