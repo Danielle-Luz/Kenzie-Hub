@@ -1,7 +1,6 @@
 import { TechHeaderStyled } from "./styles";
 import { Container } from "../styles";
 import { TitleStyled } from "../../../components/fonts/Title/styles";
-import { TextStyled } from "../../../components/fonts/Text/styles";
 import { ButtonSecondary } from "../../../components/Button/Secondary";
 
 export function Technologies() {
