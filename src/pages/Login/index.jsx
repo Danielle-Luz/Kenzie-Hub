@@ -3,21 +3,20 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { loginSchema } from "./loginSchema";
 import { fieldsList } from "./loginFormFieldsList";
 import { Form } from "../../components/Form";
-import { toast } from "react-toastify";
-import { api } from "../../services/api";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { FormContainer } from "../../components/Form/styles";
 import { Header } from "../../components/Header";
 import { TitleStyled } from "../../components/fonts/Title/styles";
 import { TextStyled } from "../../components/fonts/Text/styles";
 import { ButtonSecondary } from "../../components/Button/Secondary";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
+import { useState } from "react";
 
 export function Login() {
   const [loading, setLoading] = useState(false);
-
-  const navigate = useNavigate();
-
+  const {login} = useContext(UserContext);
+  
   useEffect(() => {
     localStorage.clear();
   }, []);
@@ -30,34 +29,6 @@ export function Login() {
     resolver: yupResolver(loginSchema),
   });
 
-  async function login(data) {
-    try {
-      setLoading(true);
-
-      const userData = await api.post("/sessions", data);
-
-      const {
-        token,
-        user: { id },
-      } = userData.data;
-
-      localStorage.setItem("@TOKEN", token);
-      localStorage.setItem("@USERID", id);
-
-      navigate("/dashboard");
-    } catch (err) {
-      const hasErrorMessage = err?.response?.data?.message;
-
-      if (hasErrorMessage) {
-        toast.error("Email ou senha incorretos");
-      } else {
-        toast.error("Não foi possível entrar no sistema");
-      }
-
-      setLoading(false);
-    }
-  }
-
   return (
     <FormContainer>
       <Header />
@@ -69,7 +40,7 @@ export function Login() {
           errors={errors}
           handleSubmit={handleSubmit}
           loading={loading}
-          submitData={login}
+          submitData={(data) => login(data, setLoading)}
           fieldsList={fieldsList}
           register={register}
         />
