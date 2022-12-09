@@ -6,6 +6,7 @@ import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { LoadingIcon } from "../../components/LoadingIcon/LoadingIcon";
 import { LoadingContainer } from "./styles";
+import { Technologies } from "./Technologies";
 
 export function Dashboard() {
   const [userData, setUserData] = useState({});
@@ -50,6 +51,9 @@ export function Dashboard() {
             <Header hasTinyLogo buttonText="Sair" darker to="/login" />
           </Container>
           <UserInfo user={userData} />
+          <Container>
+            <Technologies />
+          </Container>
         </FullWidthWrapper>
       )}
     </>
