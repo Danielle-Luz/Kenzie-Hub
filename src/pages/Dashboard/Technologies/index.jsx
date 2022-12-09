@@ -9,7 +9,7 @@ export function Technologies() {
     <TechHeaderStyled>
       <TitleStyled tag="h2">Tecnologias</TitleStyled>
       <ButtonTerciary button>
-        <img src={plus} />
+        <img src={plus} alt="ícone de adição" />
       </ButtonTerciary>
     </TechHeaderStyled>
   );
