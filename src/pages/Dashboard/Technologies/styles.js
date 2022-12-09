@@ -10,3 +10,13 @@ export const TechHeaderStyled = styled.article`
     padding: 11px;
   }
 `
+
+export const TechListStyled = styled.ul`
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+  padding: 23px 26px;
+  
+  width: 100%;
+`
