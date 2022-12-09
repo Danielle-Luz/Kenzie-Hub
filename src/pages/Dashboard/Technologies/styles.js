@@ -5,4 +5,8 @@ export const TechHeaderStyled = styled.article`
   align-items: center;
   display: flex;
   justify-content: space-between;
+
+  button {
+    padding: 11px;
+  }
 `
