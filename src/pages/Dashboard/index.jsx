@@ -6,10 +6,12 @@ import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { LoadingIcon } from "../../components/LoadingIcon/LoadingIcon";
 import { LoadingContainer } from "./styles";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
 export function Dashboard() {
-  const [userData, setUserData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const {userData, getUserData} = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -22,20 +24,7 @@ export function Dashboard() {
   }, [navigate]);
 
   useEffect(() => {
-    const userId = localStorage.getItem("@USERID");
-
-    async function getUserData() {
-      try {
-        const foundUserData = (await api.get(`users/${userId}`)).data;
-
-        setUserData(foundUserData);
-      } catch (err) {
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    getUserData();
+    getUserData(setLoading);
   }, [userData]);
 
   return (
