@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 100%;
 
   @media(min-width: 500px) {
-    padding-inline: 25px;
+    padding: 25px;
   }
 `
 
