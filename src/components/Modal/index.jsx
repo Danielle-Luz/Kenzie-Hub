@@ -1,4 +1,3 @@
-import { FieldWrapper } from "../Field";
 import { TitleStyled } from "../fonts/Title/styles";
 import { Form } from "../Form";
 import { ModalStyled } from "./styles";

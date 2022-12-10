@@ -10,11 +10,19 @@ import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
 import { Modal } from "../../components/Modal";
 import { TechContext } from "../../providers/TechContext";
+import { useForm } from "react-hook-form";
 
 export function Dashboard() {
   const { modal } = useContext(TechContext);
   const { userData, getUserData } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
   const navigate = useNavigate();
   console.log(modal);
@@ -38,7 +46,14 @@ export function Dashboard() {
         </LoadingContainer>
       ) : (
         <FullWidthWrapper>
-          {modal && <Modal />}
+          {modal && (
+            <Modal
+              register={register}
+              handleSubmit={handleSubmit}
+              errors={errors}
+              reset={reset}
+            />
+          )}
           <Container>
             <Header hasTinyLogo buttonText="Sair" darker to="/login" />
           </Container>
