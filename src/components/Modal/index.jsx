@@ -11,11 +11,12 @@ export function Modal({
   submitData,
   register,
 }) {
+  console.log(modalTitle)
   return (
     <ModalStyled>
       <article>
         <header>
-          <TitleStyled>{modalTitle}</TitleStyled>
+          <TitleStyled tag="h3">{modalTitle}</TitleStyled>
           <button>X</button>
         </header>
         <Form

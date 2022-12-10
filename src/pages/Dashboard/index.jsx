@@ -74,6 +74,7 @@ export function Dashboard() {
               fieldsList={fieldsList}
               register={register}
               handleSubmit={handleSubmit}
+              modalTitle="Cadastrar tecnologia"
               errors={errors}
               reset={reset}
             />
