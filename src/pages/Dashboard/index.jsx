@@ -25,7 +25,7 @@ export function Dashboard() {
 
   useEffect(() => {
     getUserData(setLoading);
-  }, [userData]);
+  }, []);
 
   return (
     <>
@@ -40,7 +40,7 @@ export function Dashboard() {
           </Container>
           <UserInfo user={userData} />
           <Container>
-            <Technologies />
+            <Technologies user={userData} />
           </Container>
         </FullWidthWrapper>
       )}
