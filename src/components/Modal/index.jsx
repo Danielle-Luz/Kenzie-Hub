@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { TechContext } from "../../providers/TechContext";
 import { TitleStyled } from "../fonts/Title/styles";
 import { Form } from "../Form";
 import { ModalStyled } from "./styles";
@@ -11,13 +13,14 @@ export function Modal({
   submitData,
   register,
 }) {
-  console.log(modalTitle)
+  const {showModal} = useContext(TechContext);
+
   return (
     <ModalStyled>
       <article>
         <header>
           <TitleStyled tag="h3">{modalTitle}</TitleStyled>
-          <button>X</button>
+          <button onClick={() => showModal(false)}>X</button>
         </header>
         <Form
           buttons={buttons}
