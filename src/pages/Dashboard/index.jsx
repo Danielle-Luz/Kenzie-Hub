@@ -11,6 +11,9 @@ import { UserContext } from "../../providers/UserContext";
 import { Modal } from "../../components/Modal";
 import { TechContext } from "../../providers/TechContext";
 import { useForm } from "react-hook-form";
+import { fieldsList } from "./Technologies/technologyFieldslist";
+import { ButtonSecondary } from "../../components/Button/Secondary";
+import { ButtonPrimary } from "../../components/Button/Primary";
 
 export function Dashboard() {
   const { modal } = useContext(TechContext);
@@ -38,6 +41,25 @@ export function Dashboard() {
     getUserData(setLoading);
   }, []);
 
+  function SaveButton({ buttonText }) {
+    return (
+      <ButtonPrimary
+        button
+        colorType={Object.keys(errors).length != 0 ? "negative" : "default"}
+      >
+        {buttonText}
+      </ButtonPrimary>
+    );
+  }
+
+  function DeleteButton() {
+    return (
+      <ButtonSecondary button size>
+        Excluir
+      </ButtonSecondary>
+    );
+  }
+
   return (
     <>
       {loading ? (
@@ -48,6 +70,8 @@ export function Dashboard() {
         <FullWidthWrapper>
           {modal && (
             <Modal
+              buttons={[<SaveButton buttonText="Cadastrar tecnologia" />]}
+              fieldsList={fieldsList}
               register={register}
               handleSubmit={handleSubmit}
               errors={errors}
