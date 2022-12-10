@@ -3,8 +3,12 @@ import { TitleStyled } from "../../../components/fonts/Title/styles";
 import { ButtonTerciary } from "../../../components/Button/Terciary";
 import plus from "../../../assets/imgs/plus.svg";
 import { CardTech } from "./CardTech";
+import { useContext } from "react";
+import { UserContext } from "../../../providers/UserContext";
 
 export function Technologies() {
+  const {userData} = useContext(UserContext);
+
   return (
     <>
       <TechHeaderStyled>
@@ -14,9 +18,11 @@ export function Technologies() {
         </ButtonTerciary>
       </TechHeaderStyled>
       <TechListStyled>
-        <CardTech />
-        <CardTech />
-        <CardTech />
+        {
+          userData.techs.map(({title, status}, index) => {
+            <CardTech key={index} title={title} status={status} />
+          })
+        }
       </TechListStyled>
     </>
   );
