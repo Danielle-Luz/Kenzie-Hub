@@ -2,10 +2,10 @@ import { UserInfo } from "./UserInfo";
 import { Header } from "../../components/Header";
 import { Container, FullWidthWrapper } from "./styles";
 import { useEffect, useState } from "react";
-import { api } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import { LoadingIcon } from "../../components/LoadingIcon/LoadingIcon";
 import { LoadingContainer } from "./styles";
+import { Technologies } from "./Technologies";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
 
@@ -25,7 +25,7 @@ export function Dashboard() {
 
   useEffect(() => {
     getUserData(setLoading);
-  }, [userData]);
+  }, []);
 
   return (
     <>
@@ -39,6 +39,9 @@ export function Dashboard() {
             <Header hasTinyLogo buttonText="Sair" darker to="/login" />
           </Container>
           <UserInfo user={userData} />
+          <Container>
+            <Technologies user={userData} />
+          </Container>
         </FullWidthWrapper>
       )}
     </>
