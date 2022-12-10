@@ -2,6 +2,7 @@ import { TechHeaderStyled, TechListStyled } from "./styles";
 import { TitleStyled } from "../../../components/fonts/Title/styles";
 import { ButtonTerciary } from "../../../components/Button/Terciary";
 import plus from "../../../assets/imgs/plus.svg";
+import { CardTech } from "./CardTech";
 
 export function Technologies() {
   return (
@@ -13,7 +14,9 @@ export function Technologies() {
         </ButtonTerciary>
       </TechHeaderStyled>
       <TechListStyled>
-        
+        <CardTech />
+        <CardTech />
+        <CardTech />
       </TechListStyled>
     </>
   );

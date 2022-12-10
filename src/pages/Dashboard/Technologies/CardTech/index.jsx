@@ -1,7 +1,7 @@
 import { TextStyled } from "../../../../components/fonts/Text/styles";
 import { TitleStyled } from "../../../../components/fonts/Title/styles";
 import { ButtonWrapper, CardTechStyled } from "./styles";
-import trash from "../../../../assets/imgs/trah.svg";
+import trash from "../../../../assets/imgs/trash.svg";
 
 export function CardTech() {
   return (

@@ -12,11 +12,14 @@ export const TechHeaderStyled = styled.article`
 `
 
 export const TechListStyled = styled.ul`
+  background-color: ${({theme}) => theme.colors.greyScale[3]};
+  border-radius: ${({theme}) => theme.radius}px;
   display: flex;
   flex-direction: column;
 
   gap: 16px;
+  margin-top: 21px;
   padding: 23px 26px;
-  
+
   width: 100%;
 `
