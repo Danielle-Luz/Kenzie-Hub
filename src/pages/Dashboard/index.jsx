@@ -8,7 +8,7 @@ import { LoadingContainer } from "./styles";
 import { Technologies } from "./Technologies";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
-import { Modal } from "./Modal";
+import { Modal } from "../../components/Modal";
 import { TechContext } from "../../providers/TechContext";
 
 export function Dashboard() {
@@ -17,7 +17,7 @@ export function Dashboard() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-console.log(modal)
+  console.log(modal);
   useEffect(() => {
     const userIsLogged = localStorage.getItem("@USERID");
 
