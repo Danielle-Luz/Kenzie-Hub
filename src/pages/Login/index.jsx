@@ -12,11 +12,12 @@ import { ButtonSecondary } from "../../components/Button/Secondary";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
 import { useState } from "react";
+import { ButtonPrimary } from "../../components/Button/Primary";
 
 export function Login() {
   const [loading, setLoading] = useState(false);
-  const {login} = useContext(UserContext);
-  
+  const { login } = useContext(UserContext);
+
   useEffect(() => {
     localStorage.clear();
   }, []);
@@ -29,17 +30,27 @@ export function Login() {
     resolver: yupResolver(loginSchema),
   });
 
+  function LoginButton() {
+    return (
+      <ButtonPrimary
+        button
+        colorType={Object.keys(errors).length != 0 ? "negative" : "default"}
+        loading={loading}
+      >
+        Entrar
+      </ButtonPrimary>
+    );
+  }
+
   return (
     <FormContainer>
       <Header />
       <main>
         <TitleStyled tag="h2">Login</TitleStyled>
         <Form
-          button
-          buttonText="Entrar"
+          buttons={[<LoginButton />]}
           errors={errors}
           handleSubmit={handleSubmit}
-          loading={loading}
           submitData={(data) => login(data, setLoading)}
           fieldsList={fieldsList}
           register={register}

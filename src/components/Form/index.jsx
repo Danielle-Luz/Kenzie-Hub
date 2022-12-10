@@ -1,14 +1,11 @@
 import { FormStyled } from "./styles";
 import { FieldWrapper } from "../Field";
-import { ButtonPrimary } from "../../components/Button/Primary";
 
 export function Form({
-  button,
-  buttonText,
+  buttons,
   errors,
   fieldsList,
   handleSubmit,
-  loading,
   submitData,
   register,
 }) {
@@ -31,13 +28,7 @@ export function Form({
             );
           }
         )}
-        <ButtonPrimary
-          button={button}
-          colorType={Object.keys(errors).length != 0 ? "negative" : "default"}
-          loading={loading}
-        >
-          {buttonText}
-        </ButtonPrimary>
+        {buttons.map((button) => button)}
       </>
     </FormStyled>
   );
