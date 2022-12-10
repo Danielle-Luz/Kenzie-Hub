@@ -13,7 +13,7 @@ export function Technologies() {
         </ButtonTerciary>
       </TechHeaderStyled>
       <TechListStyled>
-
+        
       </TechListStyled>
     </>
   );
