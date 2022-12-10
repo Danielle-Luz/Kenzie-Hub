@@ -19,7 +19,11 @@ export const TechListStyled = styled.ul`
 
   gap: 16px;
   margin-top: 21px;
-  padding: 23px 26px;
+  padding: 23px 8.5px;
 
   width: 100%;
+
+  @media(min-width: 500px) {
+    padding-inline: 26px;
+  }
 `
