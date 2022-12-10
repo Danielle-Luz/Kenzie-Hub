@@ -17,7 +17,7 @@ export function Dashboard() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
-
+console.log(modal)
   useEffect(() => {
     const userIsLogged = localStorage.getItem("@USERID");
 
