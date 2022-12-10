@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 import { useState } from "react";
 import { createContext } from "react";
 
-const TechContext = createContext({});
+export const TechContext = createContext({});
 
 export function TechProvider({children}) {
   const [modal, showModal] = useState(false);
