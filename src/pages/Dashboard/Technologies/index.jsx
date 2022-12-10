@@ -7,7 +7,7 @@ import { TechContext } from "../../../providers/TechContext";
 import { useContext } from "react";
 
 export function Technologies({userData}) {
-  const {modal, showModal} = useContext(TechContext);
+  const {showModal} = useContext(TechContext);
 
   return (
     <>

@@ -8,9 +8,12 @@ import { LoadingContainer } from "./styles";
 import { Technologies } from "./Technologies";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
+import { Modal } from "./Modal";
+import { TechContext } from "../../providers/TechContext";
 
 export function Dashboard() {
-  const {userData, getUserData} = useContext(UserContext);
+  const { modal } = useContext(TechContext);
+  const { userData, getUserData } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -35,6 +38,7 @@ export function Dashboard() {
         </LoadingContainer>
       ) : (
         <FullWidthWrapper>
+          {modal && <Modal />}
           <Container>
             <Header hasTinyLogo buttonText="Sair" darker to="/login" />
           </Container>
