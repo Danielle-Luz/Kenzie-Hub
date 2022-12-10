@@ -19,6 +19,7 @@ export const ButtonWrapper = styled.div`
   gap: 22px;
 
   button {
+    background-color: transparent;
     width: 19px;
   }
 `
