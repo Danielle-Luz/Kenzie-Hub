@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { createContext } from "react";
 import { Outlet } from "react-router-dom";
+import { toast } from "react-toastify";
 import { api } from "../services/api";
 
 export const TechContext = createContext({});
@@ -11,8 +12,10 @@ export function TechProvider(data) {
   async function createTechnology() {
     try {
       await api.post("/users/techs", data);
+      toast.success("Tecnologia cadastrada com sucesso");
+      showModal(false);
     } catch(err) {
-      console.log(err);
+      toast.error("Não foi possível cadastrar a tecnologia");
     }
   }
 

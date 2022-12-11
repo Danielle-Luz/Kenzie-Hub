@@ -14,6 +14,8 @@ import { useForm } from "react-hook-form";
 import { fieldsList } from "./Technologies/technologyFieldslist";
 import { ButtonSecondary } from "../../components/Button/Secondary";
 import { ButtonPrimary } from "../../components/Button/Primary";
+import { technologiesSchema } from "./Technologies/technologiesSchema";
+import { yupResolver } from "@hookform/resolvers/yup";
 
 export function Dashboard() {
   const { modal, createTechnology } = useContext(TechContext);
@@ -25,7 +27,9 @@ export function Dashboard() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm({
+    resolver: yupResolver(technologiesSchema)
+  });
 
   const navigate = useNavigate();
   console.log(modal);
@@ -74,7 +78,7 @@ export function Dashboard() {
               fieldsList={fieldsList}
               register={register}
               handleSubmit={handleSubmit}
-              submitData={(data) =>  createTechnology(data) }
+              submitData={(data) => createTechnology(data) }
               modalTitle="Cadastrar tecnologia"
               errors={errors}
               reset={reset}
