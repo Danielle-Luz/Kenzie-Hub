@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
 import { useState } from "react";
+import { ButtonPrimary } from "../../components/Button/Primary";
 
 export function Register() {
   const {createUser} = useContext(UserContext);
@@ -30,6 +31,18 @@ export function Register() {
     resolver: yupResolver(registerSchema),
   });
 
+  function RegisterButton() {
+    return (
+      <ButtonPrimary
+        button
+        colorType={Object.keys(errors).length != 0 ? "negative" : "default"}
+        loading={loading}
+      >
+        Cadastrar
+      </ButtonPrimary>
+    );
+  }
+
   return (
     <FormContainer>
       <Header buttonText="Voltar" to="/login" />
@@ -37,11 +50,9 @@ export function Register() {
         <TitleStyled tag="h2">Crie sua conta</TitleStyled>
         <TextStyled tag="span">Rápido e grátis, vamos nessa</TextStyled>
         <Form
-          button
-          buttonText="Cadastrar"
+          buttons={[<RegisterButton />]}
           errors={errors}
           handleSubmit={handleSubmit}
-          loading={loading}
           submitData={(data) => createUser(data, reset, setLoading)}
           fieldsList={fieldsList}
           register={register}

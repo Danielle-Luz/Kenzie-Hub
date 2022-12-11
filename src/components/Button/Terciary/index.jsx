@@ -1,5 +1,5 @@
 import { ButtonTerciaryStyled } from "./styles";
 
-export function ButtonTerciary({ children, to }) {
-  return <ButtonTerciaryStyled to={to}>{children}</ButtonTerciaryStyled>;
+export function ButtonTerciary({ button, onClick, children, to }) {
+  return <ButtonTerciaryStyled button={button} onClick={onClick} to={to}>{children}</ButtonTerciaryStyled>;
 }
