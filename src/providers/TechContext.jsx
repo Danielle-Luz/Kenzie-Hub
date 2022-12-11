@@ -1,3 +1,4 @@
+import { toFormData } from "axios";
 import { useContext } from "react";
 import { useState } from "react";
 import { createContext } from "react";
@@ -45,9 +46,30 @@ export function TechProvider() {
     }
   }
 
+  async function updateTechnology(data, id) {
+    try {
+      await api.put(`/users/techs/${id}`, data);
+
+      toast.success("Tecnologia atualizada com sucesso");
+
+      showModal("");
+
+      getUserData();
+    } catch (err) {
+      toast.error("Não foi possível editar a tecnologia");
+    }
+  }
+
   return (
     <TechContext.Provider
-      value={{ modal, showModal, createTechnology, technology, setTechnology, deleteTechnology }}
+      value={{
+        modal,
+        showModal,
+        createTechnology,
+        technology,
+        setTechnology,
+        deleteTechnology,
+      }}
     >
       <Outlet />
     </TechContext.Provider>
