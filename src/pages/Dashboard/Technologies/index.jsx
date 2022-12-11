@@ -19,11 +19,13 @@ export function Technologies({ user }) {
         </ButtonTerciary>
       </TechHeaderStyled>
       <TechListStyled>
-        <CardTech title="React" status="Iniciante" />
-        <CardTech title="Styled components" status="Intermediário" />
-        {user?.techs?.map(({ id, title, status }) => {
-          return <CardTech key={id} id={id} title={title} status={status} />;
-        })}
+        {user?.techs?.length == 0 ? (
+          <TitleStyled tag="h2">Nenhuma tecnologia adicionada</TitleStyled>
+        ) : (
+          user?.techs?.map(({ id, title, status }) => {
+            return <CardTech key={id} id={id} title={title} status={status} />;
+          })
+        )}
       </TechListStyled>
     </>
   );

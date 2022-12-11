@@ -22,6 +22,10 @@ export const TechListStyled = styled.ul`
 
   width: 100%;
 
+  h2 {
+    text-align: center;
+  }
+
   @media(min-width: 500px) {
     padding-inline: 26px;
   }
