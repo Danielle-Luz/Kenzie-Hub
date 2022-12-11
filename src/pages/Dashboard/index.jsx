@@ -91,7 +91,9 @@ export function Dashboard() {
               handleSubmit={handleSubmit}
               submitData={
                 modal == "create"
-                  ? (data) => createTechnology(data)
+                  ? (data) => {
+                    createTechnology(data)
+                  }
                   : () => undefined
               }
               modalTitle={

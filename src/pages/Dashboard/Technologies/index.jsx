@@ -5,9 +5,10 @@ import plus from "../../../assets/imgs/plus.svg";
 import { CardTech } from "./CardTech";
 import { TechContext } from "../../../providers/TechContext";
 import { useContext } from "react";
+import { useEffect } from "react";
 
-export function Technologies({userData}) {
-  const {showModal} = useContext(TechContext);
+export function Technologies({ user }) {
+  const { showModal } = useContext(TechContext);
 
   return (
     <>
@@ -20,11 +21,9 @@ export function Technologies({userData}) {
       <TechListStyled>
         <CardTech title="React" status="Iniciante" />
         <CardTech title="Styled components" status="Intermediário" />
-        {
-          userData?.techs?.map(({title, status}, index) => {
-            <CardTech key={index} title={title} status={status} />
-          })
-        }
+        {user?.techs?.map(({ title, status }, index) => {
+          return <CardTech key={index} title={title} status={status} />;
+        })}
       </TechListStyled>
     </>
   );
