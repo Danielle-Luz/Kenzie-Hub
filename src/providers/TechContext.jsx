@@ -9,26 +9,32 @@ import { UserContext } from "./UserContext";
 export const TechContext = createContext({});
 
 export function TechProvider() {
-  const {getUserData} = useContext(UserContext);
+  const { getUserData } = useContext(UserContext);
   const [modal, showModal] = useState("");
-  const [technology, setTechnology] = useState({title: "", status: ""});
+  const [technology, setTechnology] = useState({
+    id: "",
+    title: "",
+    status: "",
+  });
 
   async function createTechnology(data) {
     try {
       await api.post("/users/techs", data);
-      
+
       toast.success("Tecnologia cadastrada com sucesso");
 
       showModal("");
 
       getUserData();
-    } catch(err) {
+    } catch (err) {
       toast.error("Não foi possível cadastrar a tecnologia");
     }
   }
 
   return (
-    <TechContext.Provider value={{modal, showModal, createTechnology, technology, setTechnology}}>
+    <TechContext.Provider
+      value={{ modal, showModal, createTechnology, technology, setTechnology }}
+    >
       <Outlet />
     </TechContext.Provider>
   );

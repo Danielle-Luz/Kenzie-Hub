@@ -28,7 +28,7 @@ export function Dashboard() {
     formState: { errors },
     reset,
   } = useForm({
-    resolver: yupResolver(technologiesSchema)
+    resolver: yupResolver(technologiesSchema),
   });
 
   const navigate = useNavigate();
@@ -46,8 +46,9 @@ export function Dashboard() {
   }, []);
 
   useEffect(() => {
-    if(modal == "edit") {
-      reset({...technology});
+    if (modal == "edit") {
+      const { title, status } = technology;
+      reset({ title, status });
     } else {
       reset({});
     }
@@ -92,8 +93,8 @@ export function Dashboard() {
               submitData={
                 modal == "create"
                   ? (data) => {
-                    createTechnology(data)
-                  }
+                      createTechnology(data);
+                    }
                   : () => undefined
               }
               modalTitle={

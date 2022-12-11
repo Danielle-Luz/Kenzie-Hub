@@ -21,8 +21,8 @@ export function Technologies({ user }) {
       <TechListStyled>
         <CardTech title="React" status="Iniciante" />
         <CardTech title="Styled components" status="Intermediário" />
-        {user?.techs?.map(({ title, status }, index) => {
-          return <CardTech key={index} title={title} status={status} />;
+        {user?.techs?.map(({ id, title, status }) => {
+          return <CardTech key={id} id={id} title={title} status={status} />;
         })}
       </TechListStyled>
     </>

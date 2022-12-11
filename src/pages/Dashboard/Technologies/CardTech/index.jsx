@@ -4,11 +4,11 @@ import { TitleStyled } from "../../../../components/fonts/Title/styles";
 import { TechContext } from "../../../../providers/TechContext";
 import { CardTechStyled } from "./styles";
 
-export function CardTech({title, status}) {
+export function CardTech({id, title, status}) {
   const {showModal, setTechnology} = useContext(TechContext);
 
   function showEditModal() {
-    setTechnology({title, status});
+    setTechnology({id, title, status});
 
     showModal("edit");
   }
