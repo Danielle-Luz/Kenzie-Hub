@@ -1,4 +1,4 @@
-import { FormStyled } from "./styles";
+import { FormStyled, ButtonGroup } from "./styles";
 import { FieldWrapper } from "../Field";
 
 export function Form({
@@ -28,7 +28,9 @@ export function Form({
             );
           }
         )}
-        {buttons.map((button) => button)}
+        <ButtonGroup>
+          {buttons.map((button) => button)} 
+        </ButtonGroup>
       </>
     </FormStyled>
   );
