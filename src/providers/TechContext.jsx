@@ -31,9 +31,23 @@ export function TechProvider() {
     }
   }
 
+  async function deleteTechnology(id) {
+    try {
+      await api.delete(`/users/techs/${id}`);
+
+      toast.info("Tecnologia removida com sucesso");
+
+      showModal("");
+
+      getUserData();
+    } catch (err) {
+      toast.error("Não foi possível excluir a tecnologia");
+    }
+  }
+
   return (
     <TechContext.Provider
-      value={{ modal, showModal, createTechnology, technology, setTechnology }}
+      value={{ modal, showModal, createTechnology, technology, setTechnology, deleteTechnology }}
     >
       <Outlet />
     </TechContext.Provider>

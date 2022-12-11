@@ -18,7 +18,8 @@ import { technologiesSchema } from "./Technologies/technologiesSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export function Dashboard() {
-  const { modal, createTechnology, technology } = useContext(TechContext);
+  const { modal, createTechnology, technology, deleteTechnology } =
+    useContext(TechContext);
   const { userData, getUserData } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
@@ -66,7 +67,16 @@ export function Dashboard() {
   }
 
   function DeleteButton() {
-    return <ButtonSecondary button>Excluir</ButtonSecondary>;
+    return (
+      <ButtonSecondary
+        onClick={() => {
+          deleteTechnology(technology.id);
+        }}
+        button
+      >
+        Excluir
+      </ButtonSecondary>
+    );
   }
 
   return (
@@ -95,7 +105,7 @@ export function Dashboard() {
                   ? (data) => {
                       createTechnology(data);
                     }
-                  : () => undefined
+                  : () => {}
               }
               modalTitle={
                 modal == "create" ? "Cadastrar tecnologia" : "Editar tecnologia"
