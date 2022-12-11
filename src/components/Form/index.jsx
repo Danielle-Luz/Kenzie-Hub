@@ -13,7 +13,7 @@ export function Form({
     <FormStyled onSubmit={handleSubmit(submitData)} noValidate>
       <>
         {fieldsList.map(
-          ({ label, placeholder, name, options, type }, index) => {
+          ({ label, placeholder, name, options, type, disabled }, index) => {
             return (
               <FieldWrapper
                 key={index}
@@ -24,6 +24,7 @@ export function Form({
                 error={errors[name]}
                 register={register}
                 type={type}
+                disabled={disabled}
               />
             );
           }

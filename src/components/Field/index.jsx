@@ -4,6 +4,7 @@ import { TextStyled } from "../fonts/Text/styles";
 export function Field({
   className,
   name,
+  disabled,
   options,
   placeholder,
   register,
@@ -24,6 +25,7 @@ export function Field({
   ) : (
     <input
       className={className}
+      disabled={disabled}
       placeholder={placeholder}
       {...register(name)}
       type={type}
@@ -35,6 +37,7 @@ export function Field({
 export function FieldWrapper({
   label,
   placeholder,
+  disabled,
   name,
   options,
   error,
@@ -46,6 +49,7 @@ export function FieldWrapper({
       <TextStyled tag="label">{label}</TextStyled>
       <FieldStyled
         placeholder={placeholder}
+        disabled={disabled}
         options={options}
         name={name}
         register={register}
