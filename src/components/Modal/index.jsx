@@ -20,7 +20,7 @@ export function Modal({
       <article>
         <header>
           <TitleStyled tag="h3">{modalTitle}</TitleStyled>
-          <button onClick={() => showModal(false)}>X</button>
+          <button onClick={() => showModal("")}>X</button>
         </header>
         <Form
           buttons={buttons}

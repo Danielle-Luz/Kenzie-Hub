@@ -32,7 +32,7 @@ export function Dashboard() {
   });
 
   const navigate = useNavigate();
-  console.log(modal);
+
   useEffect(() => {
     const userIsLogged = localStorage.getItem("@USERID");
 
@@ -58,7 +58,7 @@ export function Dashboard() {
 
   function DeleteButton() {
     return (
-      <ButtonSecondary button size>
+      <ButtonSecondary button>
         Excluir
       </ButtonSecondary>
     );
@@ -74,12 +74,12 @@ export function Dashboard() {
         <FullWidthWrapper>
           {modal && (
             <Modal
-              buttons={[<SaveButton buttonText="Cadastrar tecnologia" />]}
+              buttons={modal == "create" ? [<SaveButton buttonText="Cadastrar tecnologia" />] : [<SaveButton buttonText="Salvar alterações" />, <DeleteButton />]}
               fieldsList={fieldsList}
               register={register}
               handleSubmit={handleSubmit}
-              submitData={(data) => createTechnology(data) }
-              modalTitle="Cadastrar tecnologia"
+              submitData={modal == "create" ? (data) => createTechnology(data) : () => undefined}
+              modalTitle={modal == "create" ? "Cadastrar tecnologia" : "Editar tecnologia"}
               errors={errors}
               reset={reset}
             />
