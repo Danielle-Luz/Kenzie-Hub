@@ -2,11 +2,19 @@ import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
-function ClickableElement({ button, className, children, onClick, to, disabled }) {
+function ClickableElement({
+  button,
+  className,
+  children,
+  onClick,
+  type,
+  to,
+  disabled,
+}) {
   return (
     <>
       {button ? (
-        <button className={className} disabled={disabled} onClick={onClick}>
+        <button className={className} disabled={disabled} onClick={onClick} type={type}>
           {children}
         </button>
       ) : (
