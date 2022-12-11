@@ -8,11 +8,11 @@ export function CardTech({title, status}) {
   const {showModal, setTechnology} = useContext(TechContext);
 
   function showEditModal() {
-    showModal("edit");
-
     setTechnology({title, status});
+
+    showModal("edit");
   }
-  
+
   return (
     <CardTechStyled onClick={showEditModal}>
         <TitleStyled tag="h3">{title}</TitleStyled>

@@ -18,7 +18,7 @@ import { technologiesSchema } from "./Technologies/technologiesSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export function Dashboard() {
-  const { modal, showModal, createTechnology } = useContext(TechContext);
+  const { modal, createTechnology, technology } = useContext(TechContext);
   const { userData, getUserData } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
@@ -45,6 +45,14 @@ export function Dashboard() {
     getUserData(setLoading);
   }, []);
 
+  useEffect(() => {
+    if(modal == "edit") {
+      reset({...technology});
+    } else {
+      reset({});
+    }
+  }, [modal, technology]);
+
   function SaveButton({ buttonText }) {
     return (
       <ButtonPrimary
@@ -57,11 +65,7 @@ export function Dashboard() {
   }
 
   function DeleteButton() {
-    return (
-      <ButtonSecondary button>
-        Excluir
-      </ButtonSecondary>
-    );
+    return <ButtonSecondary button>Excluir</ButtonSecondary>;
   }
 
   return (
@@ -74,14 +78,26 @@ export function Dashboard() {
         <FullWidthWrapper>
           {modal && (
             <Modal
-              buttons={modal == "create" ? [<SaveButton buttonText="Cadastrar tecnologia" />] : [<SaveButton buttonText="Salvar alterações" />, <DeleteButton />]}
+              buttons={
+                modal == "create"
+                  ? [<SaveButton buttonText="Cadastrar tecnologia" />]
+                  : [
+                      <SaveButton buttonText="Salvar alterações" />,
+                      <DeleteButton />,
+                    ]
+              }
               fieldsList={fieldsList}
               register={register}
               handleSubmit={handleSubmit}
-              submitData={modal == "create" ? (data) => createTechnology(data) : () => undefined}
-              modalTitle={modal == "create" ? "Cadastrar tecnologia" : "Editar tecnologia"}
+              submitData={
+                modal == "create"
+                  ? (data) => createTechnology(data)
+                  : () => undefined
+              }
+              modalTitle={
+                modal == "create" ? "Cadastrar tecnologia" : "Editar tecnologia"
+              }
               errors={errors}
-              reset={reset}
             />
           )}
           <Container>

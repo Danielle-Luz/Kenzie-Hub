@@ -8,7 +8,7 @@ export const TechContext = createContext({});
 
 export function TechProvider(data) {
   const [modal, showModal] = useState("");
-  const [technology, setTechnology] = useState({});
+  const [technology, setTechnology] = useState({title: "", status: ""});
 
   async function createTechnology() {
     try {
@@ -21,7 +21,7 @@ export function TechProvider(data) {
   }
 
   return (
-    <TechContext.Provider value={{modal, showModal, createTechnology}}>
+    <TechContext.Provider value={{modal, showModal, createTechnology, technology, setTechnology}}>
       <Outlet />
     </TechContext.Provider>
   );
