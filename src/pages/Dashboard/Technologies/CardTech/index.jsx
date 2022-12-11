@@ -1,18 +1,22 @@
+import { useContext } from "react";
 import { TextStyled } from "../../../../components/fonts/Text/styles";
 import { TitleStyled } from "../../../../components/fonts/Title/styles";
+import { TechContext } from "../../../../providers/TechContext";
 import { ButtonWrapper, CardTechStyled } from "./styles";
-import trash from "../../../../assets/imgs/trash.svg";
 
-export function CardTech() {
+export function CardTech({title, status}) {
+  const {showModal, setTechnology} = useContext(TechContext);
+
+  function showEditModal() {
+    showModal("edit");
+
+    setTechnology({title, status});
+  }
+  
   return (
-    <CardTechStyled>
-        <TitleStyled tag="h3">Tecnologias</TitleStyled>
-        <ButtonWrapper>
-          <TextStyled tag="span">Intermediário</TextStyled>
-          <button>
-            <img src={trash} alt="ícone de lixeira" />
-          </button>
-        </ButtonWrapper>
+    <CardTechStyled onClick={showEditModal}>
+        <TitleStyled tag="h3">{title}</TitleStyled>
+        <TextStyled tag="span">{status}</TextStyled>
     </CardTechStyled>
   );
 }

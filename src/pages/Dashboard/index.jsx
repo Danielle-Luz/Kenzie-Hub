@@ -18,7 +18,7 @@ import { technologiesSchema } from "./Technologies/technologiesSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export function Dashboard() {
-  const { modal, createTechnology } = useContext(TechContext);
+  const { modal, showModal, createTechnology } = useContext(TechContext);
   const { userData, getUserData } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 

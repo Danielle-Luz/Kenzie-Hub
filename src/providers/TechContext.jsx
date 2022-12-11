@@ -8,6 +8,7 @@ export const TechContext = createContext({});
 
 export function TechProvider(data) {
   const [modal, showModal] = useState("");
+  const [technology, setTechnology] = useState({});
 
   async function createTechnology() {
     try {

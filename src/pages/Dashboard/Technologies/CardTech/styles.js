@@ -12,14 +12,3 @@ export const CardTechStyled = styled.li`
     background-color: ${({theme}) => theme.colors.greyScale[2]};
   }
 `
-
-export const ButtonWrapper = styled.div`
-  align-items: center;
-  display: flex;
-  gap: 22px;
-
-  button {
-    background-color: transparent;
-    width: 19px;
-  }
-`
