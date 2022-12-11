@@ -16,7 +16,7 @@ import { ButtonSecondary } from "../../components/Button/Secondary";
 import { ButtonPrimary } from "../../components/Button/Primary";
 
 export function Dashboard() {
-  const { modal } = useContext(TechContext);
+  const { modal, createTechnology } = useContext(TechContext);
   const { userData, getUserData } = useContext(UserContext);
   const [loading, setLoading] = useState(false);
 
@@ -74,6 +74,7 @@ export function Dashboard() {
               fieldsList={fieldsList}
               register={register}
               handleSubmit={handleSubmit}
+              submitData={(data) =>  createTechnology(data) }
               modalTitle="Cadastrar tecnologia"
               errors={errors}
               reset={reset}
