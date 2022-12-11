@@ -1,7 +1,7 @@
 import { UserInfo } from "./UserInfo";
 import { Header } from "../../components/Header";
 import { Container, FullWidthWrapper } from "./styles";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoadingIcon } from "../../components/LoadingIcon/LoadingIcon";
 import { LoadingContainer } from "./styles";
@@ -39,7 +39,7 @@ export function Dashboard() {
 
   const navigate = useNavigate();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const userIsLogged = localStorage.getItem("@USERID");
 
     if (!userIsLogged) {
