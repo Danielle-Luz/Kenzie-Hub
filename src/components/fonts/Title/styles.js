@@ -9,6 +9,7 @@ const titleTypes = {
 
   h2: css`
     font-size: ${({ theme }) => theme.fontSizes[1]}px;
+    font-weight: ${({ theme }) => theme.weight.medium};
   `,
 
   h3: css`

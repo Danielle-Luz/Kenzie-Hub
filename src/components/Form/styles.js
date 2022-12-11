@@ -34,3 +34,16 @@ export const FormContainer = styled.section`
     text-align: center;
   }
 `;
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  gap: 22px;
+
+  button {
+    font-size: ${({theme}) => theme.fontSizes[1]}px;
+  }
+
+  button:nth-child(1) {
+    flex-grow: 2;
+  }
+`

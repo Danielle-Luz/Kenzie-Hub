@@ -19,6 +19,10 @@ export const FieldStyled = styled(Field)`
     border-color: ${({ theme }) => theme.colors.greyScale[0]};
   }
 
+  &:disabled {
+    color: ${({ theme }) => theme.colors.greyScale[1]};
+  }
+
   &:placeholder {
     color: ${({ theme }) => theme.colors.greyScale[1]};
   }
