@@ -28,7 +28,11 @@ export function TechProvider() {
 
       getUserData();
     } catch (err) {
-      toast.error("Não foi possível cadastrar a tecnologia");
+      if (err.response.status == 401) {
+        toast.error("Tecnologia já cadastrada no perfil do usuário");
+      } else {
+        toast.error("Não foi possível cadastrar a tecnologia");
+      }
     }
   }
 
