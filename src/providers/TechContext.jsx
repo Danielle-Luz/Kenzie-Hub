@@ -52,7 +52,7 @@ export function TechProvider() {
 
   async function updateTechnology(data, id) {
     try {
-      await api.put(`/users/techs/${id}`, data);
+      await api.put(`/users/techs/${id}`, {status: data});
 
       toast.success("Tecnologia atualizada com sucesso");
 
@@ -73,6 +73,7 @@ export function TechProvider() {
         technology,
         setTechnology,
         deleteTechnology,
+        updateTechnology
       }}
     >
       <Outlet />
