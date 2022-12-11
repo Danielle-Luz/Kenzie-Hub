@@ -1,7 +1,7 @@
 import { UserInfo } from "./UserInfo";
 import { Header } from "../../components/Header";
 import { Container, FullWidthWrapper } from "./styles";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoadingIcon } from "../../components/LoadingIcon/LoadingIcon";
 import { LoadingContainer } from "./styles";
@@ -26,7 +26,7 @@ export function Dashboard() {
     updateTechnology,
   } = useContext(TechContext);
   const { userData, getUserData } = useContext(UserContext);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const {
     register,
@@ -39,26 +39,22 @@ export function Dashboard() {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const userIsLogged = localStorage.getItem("@USERID");
 
     if (!userIsLogged) {
-      navigate("/login");
+      navigate(-1);
     }
-  }, [navigate]);
 
-  useEffect(() => {
     getUserData(setLoading);
-  }, []);
 
-  useEffect(() => {
     if (modal == "edit") {
       const { title, status } = technology;
       reset({ title, status });
     } else {
       reset({});
     }
-  }, [modal, technology]);
+  }, [navigate, modal, technology]);
 
   function SaveButton({ buttonText }) {
     return (
